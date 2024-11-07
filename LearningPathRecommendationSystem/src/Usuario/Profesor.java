@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import Excepciones.YaExisteLearningPathException;
 import Path.Actividad;
 import Path.LearningPath;
 import Path.Progreso;
@@ -37,17 +38,17 @@ public class Profesor extends Usuario {
         this.learningPathsCreados = learningPathsCreados;
     }
 
-    public LearningPath crearLearningPath(String titulo, int duracionEnMinutos, String descripcion, String nivelDeDificultad,
-                                          String version, Date ultimaFechaDeModificacion, Progreso progreso,
-                                          List<Actividad> actividades, Date fechaDeCreacion, List<Rating> ratings,
-                                          double ratingPromedio) {
+    public void crearLearningPath(String titulo, int duracionEnMinutos, String descripcion, String nivelDeDificultad,
+            String version, Date ultimaFechaDeModificacion, Progreso progreso,
+            List<Actividad> actividades, Date fechaDeCreacion, List<Rating> ratings,
+            double ratingPromedio) throws YaExisteLearningPathException {
 
-        LearningPath path = new LearningPath(titulo, duracionEnMinutos, descripcion, nivelDeDificultad, version,
-                ultimaFechaDeModificacion, progreso, actividades, fechaDeCreacion,
-                ratings, ratingPromedio);
-        learningPathsCreados.add(path);
-        return path;
-    }
+		// Verificar si ya existe un LearningPath con el mismo título
+		for (LearningPath path : learningPathsCreados) {
+		if (path.getTitulo().equalsIgnoreCase(titulo)) {
+		throw new YaExisteLearningPathException(titulo); // Lanza la excepción si existe
+		}}
+}
 
 
 
