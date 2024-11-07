@@ -58,6 +58,15 @@ public class Usuario {
             return false; 
         }
     }
+	
+	public static Usuario autenticarUsuario(String username, String password, List<Usuario> usuarios) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getUsuario().equals(username) && usuario.getContrasena().equals(password)) {
+                return usuario;
+            }
+        }
+        return null; // Retorna null si la autenticación falla
+    }
 	  
     
     
