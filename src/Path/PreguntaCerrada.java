@@ -5,12 +5,12 @@ import java.util.List;
 public class PreguntaCerrada extends Pregunta {
 
 	private List<String> opciones;
-    private String respuesta;
+    private int respuesta;
     private List<String> explicaciones;
     private int punto;
     
     
-	public PreguntaCerrada(String enunciado, List<String> opciones, String respuesta, List<String> explicaciones, int punto, int puntos) {
+	public PreguntaCerrada(String enunciado, List<String> opciones, int respuesta, List<String> explicaciones, int punto, int puntos) {
 		super(enunciado, puntos);
 		this.opciones = opciones;
 		this.respuesta = respuesta;
@@ -29,12 +29,12 @@ public class PreguntaCerrada extends Pregunta {
 	}
 
 
-	public String getRespuesta() {
+	public int getRespuesta() {
 		return respuesta;
 	}
 
 
-	public void setRespuesta(String respuesta) {
+	public void setRespuesta(int respuesta) {
 		this.respuesta = respuesta;
 	}
 

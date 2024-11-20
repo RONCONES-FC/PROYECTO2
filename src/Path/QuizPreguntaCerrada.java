@@ -12,7 +12,7 @@ public class QuizPreguntaCerrada extends Quiz {
 			boolean obligatorio, int fechaLimite, String tipo, Date fechaLimiteDate, boolean resultado,
 			double tiempoDedicado, List<Rating> ratings, List<Resena> resenas, String estado,
 			List<Actividad> actividadesPrevias, int calificacionMinima, boolean esSatisfactorio, int puntos,
-			List<PreguntaCerrada> preguntas) {
+			List<Pregunta> preguntas) {
 		super(descripcion, objetivo, nivel, tiempoEstimado, obligatorio, fechaLimite, tipo, fechaLimiteDate, resultado,
 				tiempoDedicado, ratings, resenas, estado, actividadesPrevias, calificacionMinima, esSatisfactorio, puntos,
 				preguntas);
