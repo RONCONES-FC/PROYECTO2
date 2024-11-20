@@ -31,6 +31,7 @@ class PreguntaAbiertaTest {
 		pregunta1.setExtensionMaxima(400);
 		assertEquals(400,pregunta1.getExtensionMaxima(),"La extension maxima no se asigno correctamente");
 	}
+	
 	//Test de pregunta 
 	@Test
 	void testGetEnunciado() {

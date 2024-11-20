@@ -4,11 +4,10 @@ public abstract class Pregunta {
 
 	
 	protected String enunciado;
-	protected int puntos; 
 
-	public Pregunta(String enunciado, int puntos) {
+	public Pregunta(String enunciado) {
 		this.enunciado = enunciado;
-		this.puntos = puntos; 
+
 	}
 
 	public String getEnunciado() {
@@ -19,14 +18,6 @@ public abstract class Pregunta {
 		this.enunciado = enunciado;
 	}
 
-	public int getPuntos() {
-		return puntos;
-	}
-
-	public void setPuntos(int puntos) {
-		this.puntos = puntos;
-	}
-	
 	
 	
 	

@@ -7,15 +7,14 @@ public class PreguntaCerrada extends Pregunta {
 	private List<String> opciones;
     private int respuesta;
     private List<String> explicaciones;
-    private int punto;
+
     
     
-	public PreguntaCerrada(String enunciado, List<String> opciones, int respuesta, List<String> explicaciones, int punto, int puntos) {
-		super(enunciado, puntos);
+	public PreguntaCerrada(String enunciado, List<String> opciones, int respuesta, List<String> explicaciones) {
+		super(enunciado);
 		this.opciones = opciones;
 		this.respuesta = respuesta;
 		this.explicaciones = explicaciones;
-		this.punto = punto;
 	}
 
 
@@ -48,16 +47,6 @@ public class PreguntaCerrada extends Pregunta {
 		this.explicaciones = explicaciones;
 	}
 
-
-	public int getPuntos() {
-		return punto;
-	}
-
-
-	public void asignarPunto(int nuevoPunto) {
-        this.punto = nuevoPunto;
-    }
-	
     
     
 }

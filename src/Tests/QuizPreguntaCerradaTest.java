@@ -38,7 +38,7 @@ class QuizPreguntaCerradaTest {
         List<Resena> resenas = new ArrayList<>(); 
         String estado = "sin empezar";
         List<Actividad> actividadesPrevias = new ArrayList<>();
-        List<Pregunta> preguntas = new ArrayList<>();
+        List<PreguntaCerrada> preguntas = new ArrayList<>();
         int calificacionMinima = 2;
         
         List<String> opciones = Arrays.asList("Opción A", "Opción B", "Opción C", "Opción D");
@@ -56,8 +56,7 @@ class QuizPreguntaCerradaTest {
             opciones,                       
             1,                       			// respuesta correcta
             explicaciones,                   
-            0,                                // punto asignado
-            5                                 // puntos totales posibles
+            300
         );
         preguntas.add(pregunta);
         
