@@ -116,4 +116,30 @@ class QuizPreguntaCerradaTest {
 		assertEquals(quiz1.isEsSatisfactorio(),1,"Los puntos no fueron asignados correctamente");
 	}
 
+	@Test
+	void testActualizarPuntos() {
+	    // Respuesta correcta
+	    List<Integer> respuestasCorrectas = Arrays.asList(1); 
+	    quiz1.ActualizarPuntos(respuestasCorrectas);
+	    assertEquals(5, quiz1.getPuntos(), "Los puntos no coinciden con el cálculo esperado.");
+	    assertTrue(quiz1.isEsSatisfactorio(), "El quiz debería marcarse como satisfactorio.");
+
+	    // Respuesta incorrecta
+	    List<Integer> respuestasIncorrectas = Arrays.asList(0); 
+	    quiz1.ActualizarPuntos(respuestasIncorrectas);
+	    assertEquals(0, quiz1.getPuntos(), "Los puntos no deberían acumularse con respuestas incorrectas.");
+	    assertFalse(quiz1.isEsSatisfactorio(), "El quiz no debería marcarse como satisfactorio.");
+
+	    // Lista vacía
+	    List<Integer> respuestasVacias = new ArrayList<>();
+	    quiz1.ActualizarPuntos(respuestasVacias);
+	    assertEquals(0, quiz1.getPuntos(), "Los puntos deberían ser 0 si no se proporcionan respuestas.");
+	    assertFalse(quiz1.isEsSatisfactorio(), "El quiz no debería ser satisfactorio con respuestas vacías.");
+
+	   //Más respuestas de las necesarias
+	    List<Integer> respuestasExtra = Arrays.asList(1, 2); 
+	    quiz1.ActualizarPuntos(respuestasExtra);
+	    assertEquals(5, quiz1.getPuntos(), "Las respuestas extra no deberían afectar los puntos calculados.");
+	    assertTrue(quiz1.isEsSatisfactorio(), "El quiz debería ser satisfactorio con las respuestas correctas.");
+	}
 }
