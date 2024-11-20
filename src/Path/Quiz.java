@@ -50,37 +50,38 @@ public abstract class Quiz extends Actividad {
 		public void setPuntos(int puntos) {
 			this.puntos = puntos;
 		}
-	//Actualizar puntos
 		public void ActualizarPuntos(List<Integer> respuestas) {
-			if (respuestas.size() !=0 && preguntas.size()>respuestas.size()) {
-				int dif = preguntas.size()-respuestas.size();
-				while (dif>0) {
-					respuestas.add(dif+respuestas.size()-1, 0);
-					dif=dif-1;
-				}
-			}
-			if (preguntas.size()<respuestas.size()) {
-				int dif = -respuestas.size()-preguntas.size();
-				while (dif>0) {
-					respuestas.remove(dif-respuestas.size()-1);
-					dif=dif-1;
-				}
-			}
-				int cuenta =0;
-				for (int i=0;i<preguntas.size();i++) {
-					if (preguntas.get(i).getRespuesta() == respuestas.get(i)) {
-						cuenta ++;
-					}
-					
-				}
-			this.setPuntos(cuenta);
+		    if (respuestas == null) {
+		        throw new IllegalArgumentException("La lista de respuestas no puede ser nula.");
+		    }
 
-				 
-			if (cuenta >= calificacionMinima) {
-				this.setEsSatisfactorio();	
+		    while (respuestas.size() < preguntas.size()) {
+		        respuestas.add(0); 
+		    }
+		    while (respuestas.size() > preguntas.size()) {
+		        respuestas.remove(respuestas.size() - 1); 
+		    }
+
+		    int cuenta = 0;
+
+		    for (int i = 0; i < preguntas.size(); i++) {
+		        Pregunta pregunta = preguntas.get(i);
+
+
+		        if (pregunta instanceof PreguntaCerrada) {
+		            PreguntaCerrada preguntaCerrada = (PreguntaCerrada) pregunta;
+		            if (preguntaCerrada.getRespuesta() == respuestas.get(i)) {
+		                cuenta += preguntaCerrada.getPuntos();
+		            }
+		        }
+		    }
+
+		    this.setPuntos(cuenta);
+
+		    if (cuenta >= calificacionMinima) {
+		        this.setEsSatisfactorio();
+		    }
 		}
-			
-	}
 	
 
    
