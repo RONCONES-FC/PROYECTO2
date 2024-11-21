@@ -93,5 +93,55 @@ class RecursoEducativoTest {
 		
 	}
 	
+//Test relacionados con actividad
+	
+	@Test
+	void testGetDescripcion() {
+		assertEquals("Introduccion a eclipse",RecursoEducativo1.getDescripcion(),"La descripcion no coincide");
+	}
+	@Test
+	void testSetTitulo() {
+		RecursoEducativo1.setDescripcion("Introduccion a eclipse2");
+		assertEquals("Introduccion a eclipse2",RecursoEducativo1.getDescripcion(),"La descripcion  no se cambio correctamente");
+		}
+	@Test
+	void testGetObjetivo() {
+		assertEquals("Familiarizar al estudiante con el programa",RecursoEducativo1.getObjetivo(),"El objetivo no coincide");
+	}
+	@Test
+	void testSetObjetivo() {
+		RecursoEducativo1.setObjetivo("Familiarizar al estudiante con el programa2");
+		assertEquals("Familiarizar al estudiante con el programa2",RecursoEducativo1.getObjetivo(),"La descripcion  no se cambio correctamente");
+		}
+	@Test
+	void testGetNivel() {
+		assertEquals("Basico",RecursoEducativo1.getNivel(),"El nivel no coincide");
+	}
+	@Test
+	void testSetNivel() {
+		RecursoEducativo1.setNivel("Medio");
+		assertEquals("Medio",RecursoEducativo1.getNivel(),"El nivel  no se cambio correctamente");
+		}
+	@Test
+	void testTiempoEstimado() {
+		assertEquals(5,RecursoEducativo1.getTiempoEstimado(),"El tiempo no coincide");
+	}
+	@Test
+	void testSetTiempoEstimado() {
+		RecursoEducativo1.setTiempoEstimado(7);
+		assertEquals(7,RecursoEducativo1.getTiempoEstimado(),"El timepo no se cambio correctamente");
+		}
+	@Test
+	void testISObligatorio() {
+		assertEquals(true,RecursoEducativo1.isObligatorio()," no coincide");
+	}
+	@Test
+	void testSetObligatorio() {
+		RecursoEducativo1.setObligatorio(false);
+		assertEquals(false,RecursoEducativo1.isObligatorio(),"El estado no se cambio correctamente");
+		}
+
+	
+	
 
 }

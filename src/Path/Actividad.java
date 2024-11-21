@@ -111,11 +111,6 @@ public abstract class Actividad {
 	}
 
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-
 	public Date getFechaLimiteDate() {
 		return fechaLimiteDate;
 	}
