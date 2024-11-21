@@ -92,7 +92,7 @@ class PreguntaCerradaTest {
 	//Test de pregunta 
 	@Test
 	void testGetEnunciado() {
-		assertEquals("¿Como hacer una infertaz grafica?",pregunta1.getEnunciado(),"El enunciado no coincide");
+		assertEquals("¿Cual de las siguientes es verdadera?",pregunta1.getEnunciado(),"El enunciado no coincide");
 	}
 	
 	@Test

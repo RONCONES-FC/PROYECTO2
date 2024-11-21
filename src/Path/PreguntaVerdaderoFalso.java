@@ -3,8 +3,8 @@ package Path;
 
 public class PreguntaVerdaderoFalso extends Pregunta{
 	
-	public PreguntaVerdaderoFalso(String enunciado, int puntos, boolean respuesta) {
-		super(enunciado, puntos);
+	public PreguntaVerdaderoFalso(String enunciado, boolean respuesta) {
+		super(enunciado);
 		this.respuesta = respuesta; 
 	}
 	private boolean respuesta;
@@ -16,12 +16,6 @@ public class PreguntaVerdaderoFalso extends Pregunta{
 		this.respuesta = respuesta;
 	}
 	
-	public void AsignarPuntos (boolean respuestaUsuario) {
-		if (respuestaUsuario == respuesta) {
-			puntos=1;
-		}
 		
 	}
 	
-
-}
