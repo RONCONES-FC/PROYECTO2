@@ -12,16 +12,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import Path.Actividad;
-import Path.Encuesta;
-import Path.Pregunta;
-import Path.PreguntaAbierta;
 import Path.PreguntaCerrada;
+import Path.PreguntaVerdaderoFalso;
 import Path.QuizPreguntaCerrada;
+import Path.QuizVerdaderoFalso;
 import Retroalimentacion.Rating;
 import Retroalimentacion.Resena;
 
-class QuizPreguntaCerradaTest {
-	private QuizPreguntaCerrada quiz1;
+class QuizVerdaderoFalsoTest {
+	
+	private QuizVerdaderoFalso quiz1;
+	
 	@BeforeEach
 	void setUp() throws Exception {
 		  
@@ -38,35 +39,24 @@ class QuizPreguntaCerradaTest {
         List<Resena> resenas = new ArrayList<>(); 
         String estado = "sin empezar";
         List<Actividad> actividadesPrevias = new ArrayList<>();
-        List<PreguntaCerrada> preguntas = new ArrayList<>();
-        int calificacionMinima = 2;
-        
-        List<String> opciones = Arrays.asList("Opción A", "Opción B", "Opción C", "Opción D");
-
-        List<String> explicaciones = Arrays.asList(
-            "Explicacion para Opción A", 
-            "Explicacion para Opción B", 
-            "Explicacion para Opción C", 
-            "Explicacion para Opción D"
-        );
+        List<PreguntaVerdaderoFalso> preguntas = new ArrayList<>();
+        int calificacionMinima = 1;
         
 
-        PreguntaCerrada pregunta = new PreguntaCerrada(
+        PreguntaVerdaderoFalso pregunta = new PreguntaVerdaderoFalso(
             "¿Cuál es la capital de Francia?", 
-            opciones,                       
-            1,                       			// respuesta correcta
-            explicaciones
+            true
         );
         preguntas.add(pregunta);
         
-        quiz1 = new QuizPreguntaCerrada(
+        quiz1 = new QuizVerdaderoFalso(
             descripcion,
             objetivo,
             nivel,
             tiempoEstimado,
             obligatorio,
             tiempoEstimado, 
-            "Quiz pregunta cerrada",
+            "Quiz verdadero o falso",
             fechaLimiteDate,
             resultado,
             tiempoDedicado,
@@ -83,7 +73,7 @@ class QuizPreguntaCerradaTest {
 
 	@Test
 	void testGetCalificacion() {
-		assertEquals(quiz1.getCalificacionMinima(),2,"La calificacion minima no coincide");
+		assertEquals(quiz1.getCalificacionMinima(),1,"La calificacion minima no coincide");
 	}
 	
 	@Test

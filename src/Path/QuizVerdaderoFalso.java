@@ -15,9 +15,9 @@ public class QuizVerdaderoFalso extends Quiz {
 			double tiempoDedicado, List<Rating> ratings, List<Resena> resenas, String estado,
 			List<Actividad> actividadesPrevias, int calificacionMinima, boolean esSatisfactorio, int puntos,
 			List<PreguntaVerdaderoFalso> preguntas) {
-		super(descripcion, objetivo, nivel, tiempoEstimado, obligatorio, fechaLimite, tipo, fechaLimiteDate, resultado,
+		super(descripcion, objetivo, nivel, tiempoEstimado, obligatorio, fechaLimite, "Quiz verdadero o falso", fechaLimiteDate, resultado,
 				tiempoDedicado, ratings, resenas, estado, actividadesPrevias, calificacionMinima, esSatisfactorio, puntos, null);
-		this.setTipo("Quiz Verdadero  o Falso");
+
 	}
 
 

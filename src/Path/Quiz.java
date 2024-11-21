@@ -71,7 +71,7 @@ public abstract class Quiz extends Actividad {
 		        if (pregunta instanceof PreguntaCerrada) {
 		            PreguntaCerrada preguntaCerrada = (PreguntaCerrada) pregunta;
 		            if (preguntaCerrada.getRespuesta() == respuestas.get(i)) {
-		                cuenta += preguntaCerrada.getPuntos();
+		                cuenta ++;
 		            }
 		        }
 		    }

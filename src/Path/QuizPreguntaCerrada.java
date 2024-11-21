@@ -13,11 +13,10 @@ public class QuizPreguntaCerrada extends Quiz {
 			double tiempoDedicado, List<Rating> ratings, List<Resena> resenas, String estado,
 			List<Actividad> actividadesPrevias, int calificacionMinima, boolean esSatisfactorio, int puntos,
 			List<PreguntaCerrada> preguntas) {
-		super(descripcion, objetivo, nivel, tiempoEstimado, obligatorio, fechaLimite, tipo, fechaLimiteDate, resultado,
+		super(descripcion, objetivo, nivel, tiempoEstimado, obligatorio, fechaLimite, "Quiz pregunta cerrada", fechaLimiteDate, resultado,
 				tiempoDedicado, ratings, resenas, estado, actividadesPrevias, calificacionMinima, esSatisfactorio, puntos,
 				preguntas);
 		
-		this.setTipo("Quiz pregunta cerrada");
 	}
 }
 
