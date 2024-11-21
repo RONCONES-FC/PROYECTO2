@@ -40,7 +40,22 @@ class ResenaTest {
     @Test
     void testSetComentario() {
         resena1.setComentario("Lo repetiria");
-        assertEquals(resena1.getComentario(), "Lo repetiria", "Comentario equivocado");
+        assertEquals(resena1.getUsuario(), "Lo repetiria", "Comentario equivocado");
     }
+    
+    //RetroaliemtnacionTest
+    
+    @Test
+    void testSetUsuario() {
+        assertEquals(resena1.getUsuario(), "pepe", "El usuario no coincide");
+    }
+
+    @Test
+    void testGetUsuario() {
+        resena1.setUsuario("Julio");
+        assertEquals(resena1.getComentario(), "Julio", "El usuario no se cambio correctamente");
+    }
+
+    
 }
 

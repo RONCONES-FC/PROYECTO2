@@ -32,4 +32,17 @@ class RatingTest {
 		rating1.setNumero(4.0);
 		assertEquals(rating1.getNumero(), 4.0, "Rating no cambiado correctamente");
 	}
+	
+  //RetroaliemtnacionTest
+    
+    @Test
+    void testSetUsuario() {
+        assertEquals(rating1.getUsuario(), "Jesus", "El usuario no coincide");
+    }
+
+    @Test
+    void testGetUsuario() {
+        rating1.setUsuario("Julio");
+        assertEquals(rating1.getUsuario(), "Julio", "El usuario no se cambio correctamente");
+    }
 }
